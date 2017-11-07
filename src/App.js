@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Icon } from 'leaflet';
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      lat: 51.505,
+      lng: -0.09,
+      zoom: 13,
+    };
+  }
   render() {
+    const position = [this.state.lat, this.state.lng];
+    let iconUrl = "http://www.qlue.co.id/vacancy/svc/icon-marker.png";
+    let icon = new Icon({iconUrl: iconUrl});
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to Leaflet-Qlue</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Map center={position} zoom={this.state.zoom}>
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+          />
+          <Marker position={position} icon={icon}>
+            <Popup>
+              <span>A pretty CSS3 popup. <br/> Easily customizable.</span>
+            </Popup>
+          </Marker>
+        </Map>
       </div>
     );
   }

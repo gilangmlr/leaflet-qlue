@@ -1,10 +1,12 @@
 {
-  "name": "my-app",
+  "name": "leaflet-qlue",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "leaflet": "^1.2.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-leaflet": "^1.7.3",
     "react-scripts": "1.0.17"
   },
   "scripts": {
