@@ -124,11 +124,6 @@ class App extends Component {
               );
             })
           }
-          <Marker position={position} icon={icon}>
-            <Popup>
-              <span>A pretty CSS3 popup. <br/> Easily customizable.</span>
-            </Popup>
-          </Marker>
         </Map>
       </div>
     );
