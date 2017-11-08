@@ -7,9 +7,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 13,
+      lat: -6.21462,
+      lng: 106.84513,
+      zoom: 12,
     };
   }
   render() {
